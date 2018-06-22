@@ -17,11 +17,36 @@ class ListViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		setupNavBar()
+		setupTable()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		presenter?.viewWillAppear()
+	}
+	
+	// MARK: - private
+	private func setupTable() {
+		tableView.separatorStyle = .none
+	}
+	
+	private func setupNavBar() {
+		if #available(iOS 11.0, *) {
+			navigationController?.navigationBar.prefersLargeTitles = true
+			navigationItem.largeTitleDisplayMode = .always
+		}
+		navigationItem.title = NLS("todos").firstUppercased
+		navigationController?.setNavigationBarHidden(false, animated: true)
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icAdd").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+																														 style: .plain,
+																														 target: self,
+																														 action: #selector(addAction))
+		navigationController?.navigationBar.shadowImage = UIImage(color: UIColor.mtBlackTwo)
+	}
+	
+	@objc private func addAction() {
+		dp("add action event")
 	}
 }
 

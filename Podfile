@@ -6,6 +6,7 @@ target 'Smart ToDo' do
   pod 'RxSwift'
   pod 'Firebase'
   pod 'Swinject'
+	pod 'SwinjectStoryboard'
 
   target 'Smart ToDoTests' do
     inherit! :search_paths
