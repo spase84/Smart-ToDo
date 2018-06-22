@@ -6,8 +6,11 @@
 //  Copyright © 2018 com.madteamlab. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 protocol StorageServiceType {
-	
+	var savedOnlineTriger: PublishSubject<Bool> { get }
+	func getList() -> [Task]
+	func save(task: Task)
+	func remove(task: Task)
 }
