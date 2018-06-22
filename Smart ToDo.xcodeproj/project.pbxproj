@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F040D64A20E33F00AE9F10A /* Pods_Smart_ToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */; };
 		4D0549C920DCD9C3002B5C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */; };
-		4D0549CB20DCD9C3002B5C1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0549CA20DCD9C3002B5C1A /* ViewController.swift */; };
 		4D0549CE20DCD9C3002B5C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0549CC20DCD9C3002B5C1A /* Main.storyboard */; };
 		4D0549D020DCD9C5002B5C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D0549CF20DCD9C5002B5C1A /* Assets.xcassets */; };
 		4D0549D320DCD9C5002B5C1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0549D120DCD9C5002B5C1A /* LaunchScreen.storyboard */; };
 		4D0549DE20DCD9C5002B5C1A /* Smart_ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0549DD20DCD9C5002B5C1A /* Smart_ToDoTests.swift */; };
+		4D796F9620DCE1A30078DFEA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9520DCE1A30078DFEA /* Task.swift */; };
+		4D796F9820DCE2020078DFEA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9720DCE2020078DFEA /* ListViewController.swift */; };
+		4D796F9A20DCE2490078DFEA /* ListViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9920DCE2490078DFEA /* ListViewType.swift */; };
+		4D796F9C20DCE27C0078DFEA /* ListPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */; };
+		4D796F9D20DCE27C0078DFEA /* ListPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */; };
+		F5CA5B05C2ADB17C29CC3ABC /* Pods_Smart_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0549C520DCD9C3002B5C1A /* Smart ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D0549CA20DCD9C3002B5C1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4D0549CD20DCD9C3002B5C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D0549CF20DCD9C5002B5C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D0549D220DCD9C5002B5C1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,15 @@
 		4D0549D920DCD9C5002B5C1A /* Smart ToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart ToDoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0549DD20DCD9C5002B5C1A /* Smart_ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_ToDoTests.swift; sourceTree = "<group>"; };
 		4D0549DF20DCD9C5002B5C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D796F9520DCE1A30078DFEA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4D796F9720DCE2020078DFEA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4D796F9920DCE2490078DFEA /* ListViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewType.swift; sourceTree = "<group>"; };
+		4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterType.swift; sourceTree = "<group>"; };
+		873EC08CF3ED1574FDCCDA5A /* Pods-Smart ToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDoTests/Pods-Smart ToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBF28DF94126509AE6B5F7B1 /* Pods-Smart ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo.debug.xcconfig"; sourceTree = "<group>"; };
+		C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ToDoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE54AC163A628EA50C0236FF /* Pods-Smart ToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo.release.xcconfig"; sourceTree = "<group>"; };
+		FAD2DB74E1F0545A9838DF26 /* Pods-Smart ToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDoTests/Pods-Smart ToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CA5B05C2ADB17C29CC3ABC /* Pods_Smart_ToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F040D64A20E33F00AE9F10A /* Pods_Smart_ToDoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +79,8 @@
 				4D0549C720DCD9C3002B5C1A /* Smart ToDo */,
 				4D0549DC20DCD9C5002B5C1A /* Smart ToDoTests */,
 				4D0549C620DCD9C3002B5C1A /* Products */,
+				72EA7B6E4A59B402793CC926 /* Pods */,
+				9F542543BA8DD8F839088A8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +96,9 @@
 		4D0549C720DCD9C3002B5C1A /* Smart ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */,
-				4D0549CA20DCD9C3002B5C1A /* ViewController.swift */,
+				4D796F8F20DCE0B00078DFEA /* Source */,
 				4D0549CC20DCD9C3002B5C1A /* Main.storyboard */,
-				4D0549CF20DCD9C5002B5C1A /* Assets.xcassets */,
 				4D0549D120DCD9C5002B5C1A /* LaunchScreen.storyboard */,
-				4D0549D420DCD9C5002B5C1A /* Info.plist */,
 			);
 			path = "Smart ToDo";
 			sourceTree = "<group>";
@@ -96,6 +112,80 @@
 			path = "Smart ToDoTests";
 			sourceTree = "<group>";
 		};
+		4D796F8F20DCE0B00078DFEA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4D796F9420DCE1810078DFEA /* Entities */,
+				4D796F9120DCE0D40078DFEA /* Modules */,
+				4D796F9020DCE0B70078DFEA /* Application */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4D796F9020DCE0B70078DFEA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */,
+				4D0549CF20DCD9C5002B5C1A /* Assets.xcassets */,
+				4D0549D420DCD9C5002B5C1A /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4D796F9120DCE0D40078DFEA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4D796F9220DCE1710078DFEA /* List */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4D796F9220DCE1710078DFEA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				4D796F9320DCE1790078DFEA /* View */,
+				4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		4D796F9320DCE1790078DFEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D796F9720DCE2020078DFEA /* ListViewController.swift */,
+				4D796F9920DCE2490078DFEA /* ListViewType.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D796F9420DCE1810078DFEA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4D796F9520DCE1A30078DFEA /* Task.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		72EA7B6E4A59B402793CC926 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBF28DF94126509AE6B5F7B1 /* Pods-Smart ToDo.debug.xcconfig */,
+				EE54AC163A628EA50C0236FF /* Pods-Smart ToDo.release.xcconfig */,
+				873EC08CF3ED1574FDCCDA5A /* Pods-Smart ToDoTests.debug.xcconfig */,
+				FAD2DB74E1F0545A9838DF26 /* Pods-Smart ToDoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F542543BA8DD8F839088A8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */,
+				C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D0549E220DCD9C5002B5C1A /* Build configuration list for PBXNativeTarget "Smart ToDo" */;
 			buildPhases = (
+				F02EB6642A938C1ED0AF21ED /* [CP] Check Pods Manifest.lock */,
 				4D0549C120DCD9C3002B5C1A /* Sources */,
 				4D0549C220DCD9C3002B5C1A /* Frameworks */,
 				4D0549C320DCD9C3002B5C1A /* Resources */,
+				903DDA1A1CCE7896DB94A41F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D0549E520DCD9C5002B5C1A /* Build configuration list for PBXNativeTarget "Smart ToDoTests" */;
 			buildPhases = (
+				7396A55F1C741F5C0E2CB5F2 /* [CP] Check Pods Manifest.lock */,
 				4D0549D520DCD9C5002B5C1A /* Sources */,
 				4D0549D620DCD9C5002B5C1A /* Frameworks */,
 				4D0549D720DCD9C5002B5C1A /* Resources */,
@@ -192,12 +285,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7396A55F1C741F5C0E2CB5F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart ToDoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		903DDA1A1CCE7896DB94A41F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F02EB6642A938C1ED0AF21ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart ToDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D0549C120DCD9C3002B5C1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0549CB20DCD9C3002B5C1A /* ViewController.swift in Sources */,
+				4D796F9A20DCE2490078DFEA /* ListViewType.swift in Sources */,
+				4D796F9C20DCE27C0078DFEA /* ListPresenterType.swift in Sources */,
+				4D796F9620DCE1A30078DFEA /* Task.swift in Sources */,
+				4D796F9820DCE2020078DFEA /* ListViewController.swift in Sources */,
 				4D0549C920DCD9C3002B5C1A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D796F9D20DCE27C0078DFEA /* ListPresenterType.swift in Sources */,
 				4D0549DE20DCD9C5002B5C1A /* Smart_ToDoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -356,11 +516,13 @@
 		};
 		4D0549E320DCD9C5002B5C1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBF28DF94126509AE6B5F7B1 /* Pods-Smart ToDo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWHVU66XP2;
-				INFOPLIST_FILE = "Smart ToDo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Smart ToDo/Source/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,11 +536,13 @@
 		};
 		4D0549E420DCD9C5002B5C1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE54AC163A628EA50C0236FF /* Pods-Smart ToDo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWHVU66XP2;
-				INFOPLIST_FILE = "Smart ToDo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Smart ToDo/Source/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +556,7 @@
 		};
 		4D0549E620DCD9C5002B5C1A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 873EC08CF3ED1574FDCCDA5A /* Pods-Smart ToDoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -413,6 +578,7 @@
 		};
 		4D0549E720DCD9C5002B5C1A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD2DB74E1F0545A9838DF26 /* Pods-Smart ToDoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
