@@ -32,6 +32,8 @@
 		4DFC40EA20DD0FCF008EB2D8 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40E920DD0FCF008EB2D8 /* StorageService.swift */; };
 		4DFC40ED20DD0FE6008EB2D8 /* StorageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */; };
 		4DFC40EE20DD0FEB008EB2D8 /* StorageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */; };
+		4DFC40F420DD16A7008EB2D8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */; };
+		4DFC40F520DD16A7008EB2D8 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */; };
 		F5CA5B05C2ADB17C29CC3ABC /* Pods_Smart_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		4DFC40E720DD0FA4008EB2D8 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		4DFC40E920DD0FCF008EB2D8 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceType.swift; sourceTree = "<group>"; };
+		4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		873EC08CF3ED1574FDCCDA5A /* Pods-Smart ToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDoTests/Pods-Smart ToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF28DF94126509AE6B5F7B1 /* Pods-Smart ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ToDoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +144,7 @@
 		4D796F8F20DCE0B00078DFEA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4DFC40EF20DD1678008EB2D8 /* UI */,
 				4DFC40E620DD0F93008EB2D8 /* Services */,
 				4D796FA120DCFBD60078DFEA /* Support */,
 				4D796F9420DCE1810078DFEA /* Entities */,
@@ -216,6 +221,31 @@
 				4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4DFC40EF20DD1678008EB2D8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F020DD1680008EB2D8 /* Cell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4DFC40F020DD1680008EB2D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F120DD1688008EB2D8 /* TaskCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4DFC40F120DD1688008EB2D8 /* TaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */,
+				4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */,
+			);
+			path = TaskCell;
 			sourceTree = "<group>";
 		};
 		72EA7B6E4A59B402793CC926 /* Pods */ = {
@@ -323,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0549D320DCD9C5002B5C1A /* LaunchScreen.storyboard in Resources */,
+				4DFC40F520DD16A7008EB2D8 /* TaskCell.xib in Resources */,
 				4D796FAA20DCFD2E0078DFEA /* Localizable.strings in Resources */,
 				4D0549D020DCD9C5002B5C1A /* Assets.xcassets in Resources */,
 				4D0549CE20DCD9C3002B5C1A /* Main.storyboard in Resources */,
@@ -420,6 +451,7 @@
 				4D796FA320DCFBEB0078DFEA /* UIColor+Additions.swift in Sources */,
 				4DFC40E820DD0FA4008EB2D8 /* ServicesAssembly.swift in Sources */,
 				4D796FAE20DD09150078DFEA /* ListAssembly.swift in Sources */,
+				4DFC40F420DD16A7008EB2D8 /* TaskCell.swift in Sources */,
 				4DFC40E520DD0E70008EB2D8 /* SwinjectStoryboardAssembler.swift in Sources */,
 				4D796FA620DCFC8E0078DFEA /* Utils.swift in Sources */,
 				4DFC40EA20DD0FCF008EB2D8 /* StorageService.swift in Sources */,

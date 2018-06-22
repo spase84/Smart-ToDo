@@ -1,3 +1,10 @@
 Podfile.lock
 Pods/*
 Smart ToDo.xcworkspace/*
+.idea/misc.xml
+.idea/modules.xml
+.idea/Smart ToDo.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/xcode.xml
+.idea/codeStyles/Project.xml

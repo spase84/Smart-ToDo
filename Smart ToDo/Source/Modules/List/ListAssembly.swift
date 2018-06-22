@@ -12,8 +12,8 @@ import SwinjectStoryboard
 class ListAssembly: Assembly {
 	func assemble(container: Container) {
 		// register presenter
-		container.register(ListPresenterType.self) { (_, view: ListViewType) in
-			return ListPresenter(with: view)
+		container.register(ListPresenterType.self) { (r, view: ListViewType) in
+			return ListPresenter(with: view, storage: r.resolve(StorageServiceType.self)!)
 		}
 		
 		// initialization of ViewController
