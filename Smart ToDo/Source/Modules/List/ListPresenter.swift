@@ -28,9 +28,9 @@ class ListPresenter: ListPresenterType {
 		.disposed(by: disposeBag)
 
 		storage.didSaveTask.subscribe(onNext: { [weak self] task in
-			self?.view?.show(message: NLS("save_success"), type: .success)
+			self?.view?.show(message: NLS("save_success").firstUppercased, type: .success)
 		}, onError: { [weak self] error in
-			self?.view?.show(message: NLS("save_error"), type: .error)
+			self?.view?.show(message: NLS("save_error").firstUppercased, type: .error)
 		})
 		.disposed(by: disposeBag)
 	}
@@ -43,7 +43,7 @@ class ListPresenter: ListPresenterType {
 		storage.add(task: task)
 	}
 
-	func set(isDone: Bool, taskId: String) {
-		dp(taskId, isDone)
+	func update(task: Task) {
+		storage.update(task: task)
 	}
 }

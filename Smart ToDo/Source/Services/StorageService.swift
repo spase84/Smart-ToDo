@@ -19,8 +19,10 @@ class StorageService: StorageServiceType {
 		checkFirebase()
 		db?.collection("tasks").addSnapshotListener { [weak self] snapshot, error in
 			guard let snapshot = snapshot else { return }
-			let tasks = snapshot.documents.compactMap {
-				return Task(json: $0.data())
+			let tasks = snapshot.documents.compactMap { doc -> Task? in
+				var json = doc.data()
+				json["id"] = doc.documentID
+				return Task(json: json)
 			}
 			self?.didReceiveUpdates.onNext(tasks)
 		}
@@ -31,7 +33,6 @@ class StorageService: StorageServiceType {
 		var ref: DocumentReference?
 		ref = db?.collection("tasks").addDocument(data: task.toJson()) { [weak self] err in
 			if let error = err {
-				dp(error)
 				self?.didSaveTask.onError(error)
 			} else {
 				var t = task
@@ -42,8 +43,9 @@ class StorageService: StorageServiceType {
 	}
 	
 	func update(task: Task) {
+		guard let taskId = task.id else { return }
 		checkFirebase()
-
+		db?.collection("tasks").document(taskId).setData(task.toJson())
 	}
 
 	// MARK: - private

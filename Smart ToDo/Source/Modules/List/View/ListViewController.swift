@@ -54,6 +54,7 @@ class ListViewController: UIViewController {
 			textField.attributedPlaceholder = NSAttributedString(string: NLS("title").firstUppercased,
 																													 attributes: [NSAttributedStringKey.foregroundColor: UIColor.mtSteel,
 																																				NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15, weight: .light)])
+			textField.autocapitalizationType = .sentences
 		}
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert, weak self] _ in
 			guard let alertController = alert, let textField = alertController.textFields?.first else { return }
@@ -118,17 +119,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let item = filteredItems[indexPath.row]
-		if let itemId = item.id {
-			presenter?.set(isDone: true, taskId: itemId)
-		}
+		var item = filteredItems[indexPath.row]
+		item.isDone = true
+		presenter?.update(task: item)
 	}
 	
 	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 		let item = filteredItems[indexPath.row]
-		if let itemId = item.id {
-			presenter?.set(isDone: false, taskId: itemId)
-		}
+		var t = item
+		t.isDone = false
+		presenter?.update(task: t)
 	}
 	
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

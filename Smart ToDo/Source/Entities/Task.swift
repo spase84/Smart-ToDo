@@ -15,6 +15,7 @@ struct Task {
 	var createdAt: Date?
 
 	init(json: [String: Any?]) {
+		id = json["id"] as? String
 		title = json["title"] as? String
 		isDone = (json["isDone"] as? Bool) ?? false
 		createdAt = json["createdAt"] as? Date
@@ -22,6 +23,7 @@ struct Task {
 
 	func toJson() -> [String: Any] {
 		return [
+			"id": id,
 			"title": title,
 			"isDone": isDone,
 			"createdAt": createdAt ?? Date()

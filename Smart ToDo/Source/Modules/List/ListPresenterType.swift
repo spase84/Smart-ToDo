@@ -11,5 +11,5 @@ import Foundation
 protocol ListPresenterType {
 	func viewIsReady()
 	func add(taskTitle: String)
-	func set(isDone: Bool, taskId: String)
+	func update(task: Task)
 }
