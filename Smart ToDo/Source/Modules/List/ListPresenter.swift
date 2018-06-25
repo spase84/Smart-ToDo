@@ -18,19 +18,29 @@ class ListPresenter: ListPresenterType {
 	}
 	
 	func viewIsReady() {
-		storage.savedOnlineTriger.subscribe(onNext: { success in
-			dp("SAVED")
+		storage.subscribeToFirebaseUpdates()
+
+		storage.didReceiveUpdates.subscribe(onNext: { [weak self] tasks in
+			self?.view?.update(with: tasks)
+		}, onError: { error in
+			dp(error.localizedDescription)
+		})
+		.disposed(by: disposeBag)
+
+		storage.didSaveTask.subscribe(onNext: { [weak self] task in
+			self?.view?.show(message: NLS("save_success"), type: .success)
+		}, onError: { [weak self] error in
+			self?.view?.show(message: NLS("save_error"), type: .error)
 		})
 		.disposed(by: disposeBag)
 	}
 	
-	func viewWillAppear() {
-		view?.update(with: storage.getList())
-	}
-	
 	func add(taskTitle: String) {
-		let task = Task(id: nil, title: taskTitle, isDone: false, createdAt: nil)
-		storage.save(task: task)
+		let task = Task(json: ["id": nil,
+		                 "title": taskTitle,
+		                 "isDone": false,
+		                 "createdAt": Date().timeIntervalSince1970])
+		storage.add(task: task)
 	}
 
 	func set(isDone: Bool, taskId: String) {

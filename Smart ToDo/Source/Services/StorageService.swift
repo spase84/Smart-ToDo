@@ -7,34 +7,50 @@
 //
 
 import RxSwift
+import Firebase
+import FirebaseFirestore
 
 class StorageService: StorageServiceType {
-	
-	private(set) var savedOnlineTriger: PublishSubject<Bool> = PublishSubject<Bool>()
-	
-	public func getList() -> [Task] {
-//		let list = [Task]()
-		let list = [
-			Task(id: "some ID",
-					title: "Заправить машину",
-					isDone: false,
-					createdAt: Date().addingTimeInterval(TimeInterval(3600) * (-1))),
-			Task(id: "some other ID",
-					 title: "Купить напрявляющие в Леруа",
-					 isDone: true,
-					 createdAt: Date().addingTimeInterval(TimeInterval(3600) * (-1)))
-		]
-		
-		return list
+	private var db: Firestore?
+	private(set) var didReceiveUpdates: PublishSubject<[Task]> = PublishSubject<[Task]>()
+	private(set) var didSaveTask: PublishSubject<Task> = PublishSubject<Task>()
+
+	public func subscribeToFirebaseUpdates() {
+		checkFirebase()
+		db?.collection("tasks").addSnapshotListener { [weak self] snapshot, error in
+			guard let snapshot = snapshot else { return }
+			let tasks = snapshot.documents.compactMap {
+				return Task(json: $0.data())
+			}
+			self?.didReceiveUpdates.onNext(tasks)
+		}
 	}
 	
-	func save(task: Task) {
-		dp(task)
-		
-		savedOnlineTriger.onNext(true)
+	func add(task: Task) {
+		checkFirebase()
+		var ref: DocumentReference?
+		ref = db?.collection("tasks").addDocument(data: task.toJson()) { [weak self] err in
+			if let error = err {
+				dp(error)
+				self?.didSaveTask.onError(error)
+			} else {
+				var t = task
+				t.id = ref?.documentID
+				self?.didSaveTask.onNext(t)
+			}
+		}
 	}
 	
-	func remove(task: Task) {
-		
+	func update(task: Task) {
+		checkFirebase()
+
+	}
+
+	// MARK: - private
+
+	private func checkFirebase() {
+		if nil == db {
+			db = Firestore.firestore()
+		}
 	}
 }

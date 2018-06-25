@@ -9,6 +9,7 @@
 import UIKit
 
 class ListViewController: UIViewController {
+	private var notificationing: NotificationingType?
 	private var presenter: ListPresenterType?
 	private var items: [Task] = []
 	private var filteredItems: [Task] = []
@@ -22,11 +23,6 @@ class ListViewController: UIViewController {
 		setupNavBar()
 		setupTable()
 		presenter?.viewIsReady()
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		presenter?.viewWillAppear()
 	}
 	
 	// MARK: - private
@@ -76,6 +72,7 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewType {
+
 	func update(with list: [Task]) {
 		items = list
 		filteredItems = list
@@ -84,6 +81,14 @@ extension ListViewController: ListViewType {
 	
 	func set(presenter: ListPresenterType) {
 		self.presenter = presenter
+	}
+
+	func set(notificationing: NotificationingType) {
+		self.notificationing = notificationing
+	}
+
+	func show(message: String, type: NotificationType) {
+		notificationing?.show(message: message, type: type)
 	}
 }
 

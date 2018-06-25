@@ -9,8 +9,23 @@
 import Foundation
 
 struct Task {
-	let id: String?
-	let title: String?
-	let isDone: Bool
-	let createdAt: Date?
+	var id: String?
+	var title: String?
+	var isDone: Bool = false
+	var createdAt: Date?
+
+	init(json: [String: Any?]) {
+		title = json["title"] as? String
+		isDone = (json["isDone"] as? Bool) ?? false
+		createdAt = json["createdAt"] as? Date
+	}
+
+	func toJson() -> [String: Any] {
+		return [
+			"title": title,
+			"isDone": isDone,
+			"createdAt": createdAt ?? Date()
+		]
+	}
+
 }

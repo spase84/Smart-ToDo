@@ -11,4 +11,6 @@ import Foundation
 protocol ListViewType: class {
 	func update(with list: [Task])
 	func set(presenter: ListPresenterType)
+	func set(notificationing: NotificationingType)
+	func show(message: String, type: NotificationType)
 }

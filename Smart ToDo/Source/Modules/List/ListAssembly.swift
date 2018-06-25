@@ -19,9 +19,9 @@ class ListAssembly: Assembly {
 		// initialization of ViewController
 		container.storyboardInitCompleted(ListViewController.self) { (r, vc: ListViewType) in
 			if let presenter = r.resolve(ListPresenterType.self, argument: vc) as? ListPresenter {
-				
 				vc.set(presenter: presenter)
 			}
+			vc.set(notificationing: r.resolve(NotificationingType.self)!)
 		}
 	}
 }

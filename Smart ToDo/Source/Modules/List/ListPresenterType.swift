@@ -10,7 +10,6 @@ import Foundation
 
 protocol ListPresenterType {
 	func viewIsReady()
-	func viewWillAppear()
 	func add(taskTitle: String)
 	func set(isDone: Bool, taskId: String)
 }
