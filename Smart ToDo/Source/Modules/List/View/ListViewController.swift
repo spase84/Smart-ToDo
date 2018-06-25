@@ -9,6 +9,7 @@
 import UIKit
 
 class ListViewController: UIViewController {
+	private var notificationing: NotificationingType?
 	private var presenter: ListPresenterType?
 	private var items: [Task] = []
 	private var filteredItems: [Task] = []
@@ -22,11 +23,6 @@ class ListViewController: UIViewController {
 		setupNavBar()
 		setupTable()
 		presenter?.viewIsReady()
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		presenter?.viewWillAppear()
 	}
 	
 	// MARK: - private
@@ -58,6 +54,7 @@ class ListViewController: UIViewController {
 			textField.attributedPlaceholder = NSAttributedString(string: NLS("title").firstUppercased,
 																													 attributes: [NSAttributedStringKey.foregroundColor: UIColor.mtSteel,
 																																				NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15, weight: .light)])
+			textField.autocapitalizationType = .sentences
 		}
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert, weak self] _ in
 			guard let alertController = alert, let textField = alertController.textFields?.first else { return }
@@ -76,6 +73,7 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewType {
+
 	func update(with list: [Task]) {
 		items = list
 		filteredItems = list
@@ -84,6 +82,14 @@ extension ListViewController: ListViewType {
 	
 	func set(presenter: ListPresenterType) {
 		self.presenter = presenter
+	}
+
+	func set(notificationing: NotificationingType) {
+		self.notificationing = notificationing
+	}
+
+	func show(message: String, type: NotificationType) {
+		notificationing?.show(message: message, type: type)
 	}
 }
 
@@ -113,17 +119,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let item = filteredItems[indexPath.row]
-		if let itemId = item.id {
-			presenter?.set(isDone: true, taskId: itemId)
-		}
+		var item = filteredItems[indexPath.row]
+		item.isDone = true
+		presenter?.update(task: item)
 	}
 	
 	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 		let item = filteredItems[indexPath.row]
-		if let itemId = item.id {
-			presenter?.set(isDone: false, taskId: itemId)
-		}
+		var t = item
+		t.isDone = false
+		presenter?.update(task: t)
 	}
 	
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

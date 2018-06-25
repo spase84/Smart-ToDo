@@ -9,8 +9,9 @@
 import RxSwift
 
 protocol StorageServiceType {
-	var savedOnlineTriger: PublishSubject<Bool> { get }
-	func getList() -> [Task]
-	func save(task: Task)
-	func remove(task: Task)
+	var didReceiveUpdates: PublishSubject<[Task]> { get }
+	var didSaveTask: PublishSubject<Task> { get }
+	func subscribeToFirebaseUpdates()
+	func add(task: Task)
+	func update(task: Task)
 }
