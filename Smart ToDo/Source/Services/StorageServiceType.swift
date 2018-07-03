@@ -10,8 +10,8 @@ import RxSwift
 
 protocol StorageServiceType {
 	var didReceiveUpdates: PublishSubject<[Task]> { get }
-	var didSaveTask: PublishSubject<Task> { get }
 	func subscribeToFirebaseUpdates()
-	func add(task: Task)
+	func add(taskTitle: String)
 	func update(task: Task)
+	func fetchTasks()
 }

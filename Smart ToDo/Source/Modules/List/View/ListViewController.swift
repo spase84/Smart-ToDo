@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ListViewController: UIViewController {
 	private var notificationing: NotificationingType?
-	private var presenter: ListPresenterType?
-	private var items: [Task] = []
-	private var filteredItems: [Task] = []
+	private var viewModel: ListViewModelType?
 	private let taskCellID = "taskCell"
+	private let disposeBag = DisposeBag()
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var searchBar: UISearchBar!
@@ -21,8 +22,8 @@ class ListViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupNavBar()
+		viewModel?.viewIsReady()
 		setupTable()
-		presenter?.viewIsReady()
 	}
 	
 	// MARK: - private
@@ -32,6 +33,38 @@ class ListViewController: UIViewController {
 		tableView.register(UINib(nibName: "TaskCell", bundle: Bundle.main), forCellReuseIdentifier: taskCellID)
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 150
+
+		viewModel?.tasks.asObservable()
+		.bind(to: tableView.rx.items(cellIdentifier: taskCellID, cellType: TaskCell.self)) {
+			[weak self] (row, element, cell) in
+			cell.task = element
+			if element.isDone {
+				self?.tableView.selectRow(at: IndexPath(row: row, section: 0), animated: true, scrollPosition: .none)
+			}
+		}
+		.disposed(by: disposeBag)
+
+		tableView.rx.modelSelected(Task.self).subscribe(onNext: { [weak self] task in
+			var t = task
+			t.isDone = true
+			self?.viewModel?.didSelect.onNext(t)
+		})
+		.disposed(by: disposeBag)
+
+		tableView.rx.modelDeselected(Task.self)
+		.subscribe(onNext: { [weak self] task in
+			var t = task
+			t.isDone = false
+			self?.viewModel?.didSelect.onNext(t)
+		})
+		.disposed(by: disposeBag)
+
+		tableView.rx.setDelegate(self).disposed(by: disposeBag)
+
+		searchBar.rx.text.subscribe(onNext: { [weak self] searchText in
+			self?.viewModel?.search.onNext(searchText ?? "")
+		})
+		.disposed(by: disposeBag)
 	}
 	
 	private func setupNavBar() {
@@ -41,10 +74,11 @@ class ListViewController: UIViewController {
 		}
 		navigationItem.title = NLS("todos").firstUppercased
 		navigationController?.setNavigationBarHidden(false, animated: true)
-		navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icAdd").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
-																														 style: .plain,
-																														 target: self,
-																														 action: #selector(addAction))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icAdd")
+				.withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+				style: .plain,
+				target: self,
+				action: #selector(addAction))
 		navigationController?.navigationBar.shadowImage = UIImage(color: UIColor.mtBlackTwo)
 	}
 	
@@ -60,7 +94,7 @@ class ListViewController: UIViewController {
 			guard let alertController = alert, let textField = alertController.textFields?.first else { return }
 			if let title = textField.text,
 				title.count > 0 {
-				self?.presenter?.add(taskTitle: title)
+				self?.viewModel?.add(taskTitle: title)
 			}
 		}))
 		alert.addAction(UIAlertAction(title: NLS("cancel").firstUppercased, style: .cancel, handler: nil))
@@ -73,15 +107,8 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewType {
-
-	func update(with list: [Task]) {
-		items = list
-		filteredItems = list
-		tableView.reloadData()
-	}
-	
-	func set(presenter: ListPresenterType) {
-		self.presenter = presenter
+	func set(viewModel: ListViewModelType) {
+		self.viewModel = viewModel
 	}
 
 	func set(notificationing: NotificationingType) {
@@ -93,56 +120,8 @@ extension ListViewController: ListViewType {
 	}
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
-	}
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return filteredItems.count
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let item = filteredItems[indexPath.row]
-		if let cell = tableView.dequeueReusableCell(withIdentifier: taskCellID, for: indexPath) as? TaskCell {
-			cell.task = item
-			return cell
-		}
-		return UITableViewCell()
-	}
-	
-	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		let item = filteredItems[indexPath.row]
-		if item.isDone {
-			tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-		}
-	}
-	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		var item = filteredItems[indexPath.row]
-		item.isDone = true
-		presenter?.update(task: item)
-	}
-	
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-		let item = filteredItems[indexPath.row]
-		var t = item
-		t.isDone = false
-		presenter?.update(task: t)
-	}
-	
+extension ListViewController: UIScrollViewDelegate {
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		hideKeyboard()
-	}
-}
-
-extension ListViewController: UISearchBarDelegate {
-	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		if searchText.isEmpty {
-			filteredItems = items
-		} else {
-			filteredItems = items.filter { ($0.title ?? "").lowercased().contains(searchText.lowercased()) }
-		}
-		tableView.reloadData()
 	}
 }

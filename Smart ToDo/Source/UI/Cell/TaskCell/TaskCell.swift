@@ -46,6 +46,8 @@ class TaskCell: UITableViewCell {
 				let formatter = DateFormatter()
 				formatter.dateFormat = "dd.MM.YYYY"
 				dateLabel.text = formatter.string(from: createdAt)
+			} else {
+				dateLabel.text = nil
 			}
 			titleLabel.text = task?.title
 		}

@@ -13,7 +13,6 @@ import FirebaseFirestore
 class StorageService: StorageServiceType {
 	private var db: Firestore?
 	private(set) var didReceiveUpdates: PublishSubject<[Task]> = PublishSubject<[Task]>()
-	private(set) var didSaveTask: PublishSubject<Task> = PublishSubject<Task>()
 
 	public func subscribeToFirebaseUpdates() {
 		checkFirebase()
@@ -24,21 +23,22 @@ class StorageService: StorageServiceType {
 				json["id"] = doc.documentID
 				return Task(json: json)
 			}
+			.sorted { t1, t2 in
+				return t1.createdAt ?? Date() < t2.createdAt ?? Date()
+			}
 			self?.didReceiveUpdates.onNext(tasks)
 		}
 	}
 	
-	func add(task: Task) {
+	func add(taskTitle: String) {
 		checkFirebase()
 		var ref: DocumentReference?
-		ref = db?.collection("tasks").addDocument(data: task.toJson()) { [weak self] err in
-			if let error = err {
-				self?.didSaveTask.onError(error)
-			} else {
-				var t = task
-				t.id = ref?.documentID
-				self?.didSaveTask.onNext(t)
-			}
+		let json: [String: Any?] = ["id": nil,
+		            "title": taskTitle,
+		            "isDone": false,
+		            "createdAt": Date().timeIntervalSince1970]
+		ref = db?.collection("tasks").addDocument(data: json) { [weak self] err in
+			self?.fetchTasks()
 		}
 	}
 	
@@ -46,6 +46,26 @@ class StorageService: StorageServiceType {
 		guard let taskId = task.id else { return }
 		checkFirebase()
 		db?.collection("tasks").document(taskId).setData(task.toJson())
+	}
+
+	func fetchTasks() {
+		checkFirebase()
+
+		self.db?.collection("tasks").getDocuments { [weak self] snapshot, error in
+			if let err = error {
+				self?.didReceiveUpdates.onError(err)
+			} else {
+				let tasks = snapshot?.documents.compactMap { doc -> Task? in
+					var t = doc.data()
+					t["id"] = doc.documentID
+					return Task(json: t)
+				}
+				.sorted { t1, t2 in
+					return t1.createdAt ?? Date() < t2.createdAt ?? Date()
+				}
+				self?.didReceiveUpdates.onNext(tasks ?? [])
+			}
+		}
 	}
 
 	// MARK: - private
