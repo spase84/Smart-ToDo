@@ -6,8 +6,12 @@
 //  Copyright © 2018 com.madteamlab. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
 protocol StorageServiceType {
-	
+	var didReceiveUpdates: PublishSubject<[Task]> { get }
+	func subscribeToFirebaseUpdates()
+	func add(taskTitle: String)
+	func update(task: Task)
+	func fetchTasks()
 }

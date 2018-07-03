@@ -13,5 +13,8 @@ class ServicesAssembly: Assembly {
 		container.register(StorageServiceType.self) { _ in
 			return StorageService()
 		}.inObjectScope(.container) // singleton
+		container.register(NotificationingType.self) { _ in
+			return Notificationing()
+		}
 	}
 }

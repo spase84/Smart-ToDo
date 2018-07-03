@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161492EF34CB3996EDE19FC0 /* Notificationing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161494B2DB27DB6035CAA87D /* Notificationing.swift */; };
+		16149BF538551FA0006CA367 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16149C96BE93F98CB62CA953 /* ListViewModel.swift */; };
+		16149C03397FFBB3070CE588 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161492621575C3FA7ED13AF5 /* UIApplicationExtension.swift */; };
+		16149CD9BA2B5EBB7E747E94 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16149C96BE93F98CB62CA953 /* ListViewModel.swift */; };
+		16149D95780F8C110E4231DC /* NotificationingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161498A680DB6E0E136C6459 /* NotificationingType.swift */; };
 		3F040D64A20E33F00AE9F10A /* Pods_Smart_ToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */; };
 		4D0549C920DCD9C3002B5C1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */; };
 		4D0549CE20DCD9C3002B5C1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0549CC20DCD9C3002B5C1A /* Main.storyboard */; };
@@ -16,10 +21,6 @@
 		4D796F9620DCE1A30078DFEA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9520DCE1A30078DFEA /* Task.swift */; };
 		4D796F9820DCE2020078DFEA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9720DCE2020078DFEA /* ListViewController.swift */; };
 		4D796F9A20DCE2490078DFEA /* ListViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9920DCE2490078DFEA /* ListViewType.swift */; };
-		4D796F9C20DCE27C0078DFEA /* ListPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */; };
-		4D796F9D20DCE27C0078DFEA /* ListPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */; };
-		4D796F9F20DCFA360078DFEA /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9E20DCFA360078DFEA /* ListPresenter.swift */; };
-		4D796FA020DCFA360078DFEA /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796F9E20DCFA360078DFEA /* ListPresenter.swift */; };
 		4D796FA320DCFBEB0078DFEA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796FA220DCFBEB0078DFEA /* UIColor+Additions.swift */; };
 		4D796FA420DCFBEB0078DFEA /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796FA220DCFBEB0078DFEA /* UIColor+Additions.swift */; };
 		4D796FA620DCFC8E0078DFEA /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796FA520DCFC8E0078DFEA /* Utils.swift */; };
@@ -27,11 +28,14 @@
 		4D796FAA20DCFD2E0078DFEA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D796FA920DCFD2E0078DFEA /* Localizable.strings */; };
 		4D796FAC20DCFDE30078DFEA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796FAB20DCFDE30078DFEA /* UIImageExtension.swift */; };
 		4D796FAE20DD09150078DFEA /* ListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D796FAD20DD09150078DFEA /* ListAssembly.swift */; };
+		4DD105C920DE69970079588D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DD105C820DE69970079588D /* GoogleService-Info.plist */; };
 		4DFC40E520DD0E70008EB2D8 /* SwinjectStoryboardAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40E420DD0E70008EB2D8 /* SwinjectStoryboardAssembler.swift */; };
 		4DFC40E820DD0FA4008EB2D8 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40E720DD0FA4008EB2D8 /* ServicesAssembly.swift */; };
 		4DFC40EA20DD0FCF008EB2D8 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40E920DD0FCF008EB2D8 /* StorageService.swift */; };
 		4DFC40ED20DD0FE6008EB2D8 /* StorageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */; };
 		4DFC40EE20DD0FEB008EB2D8 /* StorageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */; };
+		4DFC40F420DD16A7008EB2D8 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */; };
+		4DFC40F520DD16A7008EB2D8 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */; };
 		F5CA5B05C2ADB17C29CC3ABC /* Pods_Smart_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161492621575C3FA7ED13AF5 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		161494B2DB27DB6035CAA87D /* Notificationing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notificationing.swift; sourceTree = "<group>"; };
+		161498A680DB6E0E136C6459 /* NotificationingType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationingType.swift; sourceTree = "<group>"; };
+		16149C96BE93F98CB62CA953 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		41524053EEB85B8F997B8791 /* Pods_Smart_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0549C520DCD9C3002B5C1A /* Smart ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart ToDo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,18 +67,19 @@
 		4D796F9520DCE1A30078DFEA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4D796F9720DCE2020078DFEA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4D796F9920DCE2490078DFEA /* ListViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewType.swift; sourceTree = "<group>"; };
-		4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterType.swift; sourceTree = "<group>"; };
-		4D796F9E20DCFA360078DFEA /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		4D796FA220DCFBEB0078DFEA /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		4D796FA520DCFC8E0078DFEA /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4D796FA720DCFCF10078DFEA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4D796FA920DCFD2E0078DFEA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4D796FAB20DCFDE30078DFEA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		4D796FAD20DD09150078DFEA /* ListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAssembly.swift; sourceTree = "<group>"; };
+		4DD105C820DE69970079588D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DFC40E420DD0E70008EB2D8 /* SwinjectStoryboardAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardAssembler.swift; sourceTree = "<group>"; };
 		4DFC40E720DD0FA4008EB2D8 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		4DFC40E920DD0FCF008EB2D8 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceType.swift; sourceTree = "<group>"; };
+		4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		873EC08CF3ED1574FDCCDA5A /* Pods-Smart ToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDoTests/Pods-Smart ToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF28DF94126509AE6B5F7B1 /* Pods-Smart ToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart ToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		C02F722E36EB632B79DA6801 /* Pods_Smart_ToDoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ToDoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +149,7 @@
 		4D796F8F20DCE0B00078DFEA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				4DFC40EF20DD1678008EB2D8 /* UI */,
 				4DFC40E620DD0F93008EB2D8 /* Services */,
 				4D796FA120DCFBD60078DFEA /* Support */,
 				4D796F9420DCE1810078DFEA /* Entities */,
@@ -152,6 +162,7 @@
 		4D796F9020DCE0B70078DFEA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4DD105C820DE69970079588D /* GoogleService-Info.plist */,
 				4D0549C820DCD9C3002B5C1A /* AppDelegate.swift */,
 				4D0549CF20DCD9C5002B5C1A /* Assets.xcassets */,
 				4D0549D420DCD9C5002B5C1A /* Info.plist */,
@@ -173,9 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				4D796F9320DCE1790078DFEA /* View */,
-				4D796F9B20DCE27C0078DFEA /* ListPresenterType.swift */,
-				4D796F9E20DCFA360078DFEA /* ListPresenter.swift */,
 				4D796FAD20DD09150078DFEA /* ListAssembly.swift */,
+				16149C96BE93F98CB62CA953 /* ListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -204,6 +214,7 @@
 				4D796FA520DCFC8E0078DFEA /* Utils.swift */,
 				4D796FA720DCFCF10078DFEA /* StringExtension.swift */,
 				4D796FAB20DCFDE30078DFEA /* UIImageExtension.swift */,
+				161492621575C3FA7ED13AF5 /* UIApplicationExtension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -216,6 +227,33 @@
 				4DFC40EC20DD0FE6008EB2D8 /* StorageServiceType.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4DFC40EF20DD1678008EB2D8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F020DD1680008EB2D8 /* Cell */,
+				161498A680DB6E0E136C6459 /* NotificationingType.swift */,
+				161494B2DB27DB6035CAA87D /* Notificationing.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4DFC40F020DD1680008EB2D8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F120DD1688008EB2D8 /* TaskCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4DFC40F120DD1688008EB2D8 /* TaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				4DFC40F220DD16A7008EB2D8 /* TaskCell.swift */,
+				4DFC40F320DD16A7008EB2D8 /* TaskCell.xib */,
+			);
+			path = TaskCell;
 			sourceTree = "<group>";
 		};
 		72EA7B6E4A59B402793CC926 /* Pods */ = {
@@ -323,9 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0549D320DCD9C5002B5C1A /* LaunchScreen.storyboard in Resources */,
+				4DFC40F520DD16A7008EB2D8 /* TaskCell.xib in Resources */,
 				4D796FAA20DCFD2E0078DFEA /* Localizable.strings in Resources */,
 				4D0549D020DCD9C5002B5C1A /* Assets.xcassets in Resources */,
 				4D0549CE20DCD9C3002B5C1A /* Main.storyboard in Resources */,
+				4DD105C920DE69970079588D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,18 +404,34 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Smart ToDo/Pods-Smart ToDo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,19 +466,22 @@
 			files = (
 				4D796FA820DCFCF10078DFEA /* StringExtension.swift in Sources */,
 				4D796F9A20DCE2490078DFEA /* ListViewType.swift in Sources */,
-				4D796F9C20DCE27C0078DFEA /* ListPresenterType.swift in Sources */,
 				4D796FAC20DCFDE30078DFEA /* UIImageExtension.swift in Sources */,
 				4D796F9620DCE1A30078DFEA /* Task.swift in Sources */,
 				4D796F9820DCE2020078DFEA /* ListViewController.swift in Sources */,
 				4DFC40ED20DD0FE6008EB2D8 /* StorageServiceType.swift in Sources */,
-				4D796F9F20DCFA360078DFEA /* ListPresenter.swift in Sources */,
 				4D0549C920DCD9C3002B5C1A /* AppDelegate.swift in Sources */,
 				4D796FA320DCFBEB0078DFEA /* UIColor+Additions.swift in Sources */,
 				4DFC40E820DD0FA4008EB2D8 /* ServicesAssembly.swift in Sources */,
 				4D796FAE20DD09150078DFEA /* ListAssembly.swift in Sources */,
+				4DFC40F420DD16A7008EB2D8 /* TaskCell.swift in Sources */,
 				4DFC40E520DD0E70008EB2D8 /* SwinjectStoryboardAssembler.swift in Sources */,
 				4D796FA620DCFC8E0078DFEA /* Utils.swift in Sources */,
 				4DFC40EA20DD0FCF008EB2D8 /* StorageService.swift in Sources */,
+				16149D95780F8C110E4231DC /* NotificationingType.swift in Sources */,
+				161492EF34CB3996EDE19FC0 /* Notificationing.swift in Sources */,
+				16149C03397FFBB3070CE588 /* UIApplicationExtension.swift in Sources */,
+				16149CD9BA2B5EBB7E747E94 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +489,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D796F9D20DCE27C0078DFEA /* ListPresenterType.swift in Sources */,
 				4DFC40EE20DD0FEB008EB2D8 /* StorageServiceType.swift in Sources */,
 				4D796FA420DCFBEB0078DFEA /* UIColor+Additions.swift in Sources */,
-				4D796FA020DCFA360078DFEA /* ListPresenter.swift in Sources */,
 				4D0549DE20DCD9C5002B5C1A /* Smart_ToDoTests.swift in Sources */,
+				16149BF538551FA0006CA367 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

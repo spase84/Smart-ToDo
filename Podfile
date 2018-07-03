@@ -4,7 +4,9 @@ target 'Smart ToDo' do
   use_frameworks!
 
   pod 'RxSwift'
-  pod 'Firebase'
+  pod 'RxCocoa'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'Swinject'
 	pod 'SwinjectStoryboard'
 

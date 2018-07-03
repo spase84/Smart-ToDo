@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
+
+		// Firebase
+		FirebaseApp.configure()
+
 		// Defaults for UINavigationBar
 		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white,
 																												NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17, weight: .light)]
@@ -24,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Defaults for UISearchBar
 		UISearchBar.appearance().barTintColor = UIColor.mtBlackTwo
 		UISearchBar.appearance().backgroundColor = UIColor.mtBlackTwo
-		
+
 		return true
 	}
 }
